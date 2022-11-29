@@ -22,3 +22,20 @@ Proyek ini dapat diimplementasikan pada perusahaan dengan karakteristik sebagai 
 
 - Perusahaan penjual mobil bekas yang memberi opsi beberapa mobil ke calon konsumen
 - Perusahaan penyedia atau jual beli kendaraan secara _online_ yang dapat memberikan fitur spesifikasi pada pengguna aplikasi.
+
+**Problem Statement**
+--------------------------------------------------
+- Spesifikasi apa yang paling berpengaruh terhadap tinggi/rendahnya harga mobil?
+- Berapa harga pasar mobil _second_ dengan spesifikasi tertentu?
+- Bagaimana cara melakukan proses data agar model dapat memberikan _output_ data yang baik?
+
+**Goals**
+--------------------------------------------------
+- Mengetahui spesifikasi yang paling berpengaruh terhadap tinggi/rendahnya harga mobil
+- Mengetahui harga pasar mobil _second_ spesifikasi tertentu dengan melakukan _preprocessing_ pada model
+- Membuat model Machine Learning untuk memprediksi harga mobil dengan spesifikasi yang diinginkan.
+
+**Solution Statement**
+--------------------------------------------------
+- Melakukan Univariate Analysis dan Multivariate Analysis serta melakukan visualisasi data sehingga dapat mengetahui korelasi antar fitur
+- 

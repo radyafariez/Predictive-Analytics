@@ -59,3 +59,49 @@ Beberapa variable pada dataset, yaitu:
 - **seller_type**: Jenis penjualan
 - **transmission**: Jenis transmisi mobil
 - **owner**: Jenis kepemilikan sebelumnya.
+
+Pada variabel - variabel tersebut diketahui bahwa variabel **name** tidak mempengaruhi harga mobil, sehingga fitur tersebut dapat dihapus.
+
+**Univariate Analysis**
+--------------------------------------------------
+Pada tahap ini dilakukan analisa fitur secara terpisah.
+
+Berikut analisa terhadap fitur kategorik:
+
+Keempat fitur kategorik, diantaranya, fitur **seller**, **transmission**, **fuel**, dan **owner** memiliki sebaran data yang tidak terlalu merata, namun bervariasi.
+
+<img width="120" alt="fitur fuel" src="https://user-images.githubusercontent.com/109395960/204485938-939e0ade-b003-4e0c-80ac-ebe7278ea1f6.PNG">
+<img width="170" alt="fitur owner" src="https://user-images.githubusercontent.com/109395960/204485942-d9c1af24-0298-4c47-9c34-54198878a0fe.PNG">
+<img width="156" alt="fitur seller type" src="https://user-images.githubusercontent.com/109395960/204485945-093b1026-084e-4042-82cb-699b370ba1a7.PNG">
+<img width="161" alt="fitur transmission" src="https://user-images.githubusercontent.com/109395960/204485949-fed73e36-1c9c-45d4-94d2-a66719775abe.PNG">
+
+Lalu, pada fitur numerik, dapat ditunjukkan analisa sebaran dalam bentuk grafik:
+
+<img width="583" alt="fitur numerik1" src="https://user-images.githubusercontent.com/109395960/204486781-0d12b15e-092e-496b-8db4-ff2b9e297c28.PNG">
+<img width="268" alt="fitur numerik2" src="https://user-images.githubusercontent.com/109395960/204486797-831a615c-be54-4fd9-81d1-fd27decb9783.PNG">
+
+Pada sebaran data yang ditunjukkan, dapat diketahui bahwa:
+
+- Tahun produksi mobil yang paling banyak dijual yaitu mobil dengan produksi tahun 2017
+- Jarak tempuh yang dimiliki mobil paling banyak berada dibawah rentang 100.000 kilometer.
+
+**Multivariate Analysis**
+--------------------------------------------------
+**Analisa Fitur**
+
+Pada bagian ini dibuat Multivariate Analysis, yaitu korelasi antara 2 atau lebih fitur dalam data.
+
+Dibawah ini didapatkan Correlation Matrix
+
+<img width="289" alt="correlation matrix" src="https://user-images.githubusercontent.com/109395960/204488914-250c6ce9-86a5-43ac-8020-f21806992a31.PNG">
+
+Pada Correlation Matrix ditunjukkan bahwa ketiga fitur memiliki korelasi yang merata secara signifikan.
+
+**Data Preparation**
+
+
+
+
+
+
+

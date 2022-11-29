@@ -1,4 +1,4 @@
-# Predictive Analytics - Mohammad-Radya-Fariez
+# Predictive Analytics - Mohammad Radya Fariez
 --------------------------------------------------
 Disusun oleh : **Mohammad Radya Fariez**
 
@@ -38,4 +38,24 @@ Proyek ini dapat diimplementasikan pada perusahaan dengan karakteristik sebagai 
 **Solution Statement**
 --------------------------------------------------
 - Melakukan Univariate Analysis dan Multivariate Analysis serta melakukan visualisasi data sehingga dapat mengetahui korelasi antar fitur
-- 
+- Mempersiapkan data agar dapat diproses untuk membangun model
+- Membangun tiga model, yaitu: K-Nearest Neighbor, Random Forest dan Boosting Algorithm untuk membandingkan hasil yang paling optimal.
+
+**Data Understanding**
+--------------------------------------------------
+Dataset yang digunakan pada proyek ini bersumber dari Kaggle yang dapat diunduh di [Vehicle Dataset](https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho).
+
+Dari dataset terkait, didapatkan informasi sebagai berikut:
+- Dataset merupakan data yang memiliki format CSV (Comma-Separated-Values)
+- Dataset memiliki 4339 sampel data
+- Dataset memiliki 7 fitur
+
+Beberapa variable pada dataset, yaitu:
+- **name**: Nama merk mobil
+- **year** : Tahun produksi pada mobil
+- **selling_price**: Harga jual
+- **km_driven**: Jumlah jarak tempuh pada mobil (dalam kilometer)
+- **fuel**: Jenis bahan bakar
+- **seller_type**: Jenis penjualan
+- **transmission**: Jenis transmisi mobil
+- **owner**: Jenis kepemilikan sebelumnya.

@@ -98,10 +98,45 @@ Dibawah ini didapatkan Correlation Matrix
 Pada Correlation Matrix ditunjukkan bahwa ketiga fitur memiliki korelasi yang merata secara signifikan.
 
 **Data Preparation**
+--------------------------------------------------
+Dilakukan beberapa step pada proses Data Preparation, diantaranya:
 
+- **One Hot Encoding**
 
+Merupakan teknik dalam mengubah fitur kategorik menjadi numerik. Dalam proyek ini, dilakukan proses One Hot Encoding pada fitur **fuel**, **seller_type**, **transmission**, dan **owner**.
 
+- **Normalization**
 
+Merupakan proses penyeragaman pada data tiap fitur dan label, sehingga Machine Learning dapat melakukan proses data yang memiliki skala relatif sama. Di dalam proyek ini dilakukan Normalisasi dengan teknik StandardScaler.
 
+- **Train Test Split**
 
+Merupakan proses atau step pembagian dataset menjadi data latih dan data test. Di dalam Machine Learning perlu dilakukan pembagian kedua data. Dalam hal ini, data test diberi proporsi 0.1 atau 10% dari keseluruhan pada Dataset.
 
+**Modelling**
+--------------------------------------------------
+Pada proyek ini dilakukan deploy pada 3 algoritma, yaitu KNN, Random Forest dan Boost Algorithm.
+
+- **KNN** atau K-Nearest Neighbor merupakan algortima dengan membandingkan jarak sampel dengan sampel lain dengan melihat jumlah n data terdekat. Dalam proyek ini, digunakan KNeighborsRegressor dengan memberikan input X_train dan y_train.
+- **Random Forest** merupakan teknik yang  dilakukan dengan metode Ensemble. Dilakukan pengoperasian dengan membangun decision tree (pohon keputusan). Pada proyek ini digunakan RandomForestRegressor.
+- **Adaptive Boosting** Merupakan algoritma yang dijalankan untuk meningkatkan performa dengan cara melakukan merging atau penggabungan model yang dianggap lemah dan digantikannya dengan model yang kuat. Dalam proyek ini, digunakan AdaBoostRegressor.
+
+**Evaluation**
+--------------------------------------------------
+Dalam step ini, evaluasi dilakukan dengan memperhitungkan Mean Squared Error yang dapat menentukan ttingkat kemiripan antara hasil prediksi dengan nilai y_test (hasil nyata). dalam MSE ini, tingkatan error dihitung berdasarkan rata - rata error dari kuadrat hasil aktual yang diselisihkan hasil prediksi.
+
+Maka, dari perhitungan tersebut, dihasilkan beberapa evaluasi sebagai berikut:
+
+- MSE
+
+<img width="245" alt="mse" src="https://user-images.githubusercontent.com/109395960/204513100-d4e620e1-c391-4124-8d49-b1052dc276ec.PNG">
+
+- Nilai Akurasi
+
+<img width="409" alt="graph" src="https://user-images.githubusercontent.com/109395960/204513090-a4cf5a50-b371-4996-a5ad-0af9b5804b73.PNG">
+
+- Nilai Perbandingan
+
+<img width="294" alt="comparison" src="https://user-images.githubusercontent.com/109395960/204513105-34f2b309-ed8c-4339-973b-db8260960502.PNG">
+
+Dari beberapa hasil model, dapat diketahui bahwa algoritma Random Forest memiliki nilai akurasi yang lebih baik dengan tingkatan error terkecil. Nilai perbandingan juga menunjukkan bahwa Random Forest Algorithm memiliki nilai yang paling mendekati y_true (nilai aktual) dibanding model algoritma lainnya.

@@ -70,10 +70,39 @@ Berikut analisa terhadap fitur kategorik:
 
 Keempat fitur kategorik, diantaranya, fitur **seller**, **transmission**, **fuel**, dan **owner** memiliki sebaran data yang tidak terlalu merata, namun bervariasi.
 
-<img width="120" alt="fitur fuel" src="https://user-images.githubusercontent.com/109395960/204485938-939e0ade-b003-4e0c-80ac-ebe7278ea1f6.PNG">
-<img width="170" alt="fitur owner" src="https://user-images.githubusercontent.com/109395960/204485942-d9c1af24-0298-4c47-9c34-54198878a0fe.PNG">
-<img width="156" alt="fitur seller type" src="https://user-images.githubusercontent.com/109395960/204485945-093b1026-084e-4042-82cb-699b370ba1a7.PNG">
-<img width="161" alt="fitur transmission" src="https://user-images.githubusercontent.com/109395960/204485949-fed73e36-1c9c-45d4-94d2-a66719775abe.PNG">
+| fuel     |               |
+|----------|---------------|
+| CNG      |  	   40      |
+| Diesel   |     2153      |
+| Electric |        1      |
+| LPG      |       23      |
+| Petrol   |     2123      |
+| Name: fuel, dtype: int64
+
+
+| owner      	       |           |
+|--------------------|-----------|
+| First Owner	       |   2832    |
+| Fourth & AboveOwner|     81    |
+| Second Owner	     |   1106    |
+| Test Driver Car    |     17    |
+| Third Owner	       | 	  306    |
+| Name: owner, dtype: int64
+
+
+| seller_type        |           |
+|--------------------|-----------|
+| Dealer	           |    994    |
+| Individual	       |   3244    |
+| Trustmark Dealer   |    102    |
+| Name: seller_type, dtype: int64
+
+
+| transmission       |           |
+|--------------------|-----------|
+| Automatic	         |    448    |
+| Manual|   3244     |	  3892	 |
+| Name: seller_type, dtype: int64
 
 Lalu, pada fitur numerik, dapat ditunjukkan analisa sebaran dalam bentuk grafik:
 
@@ -129,7 +158,11 @@ Maka, dari perhitungan tersebut, dihasilkan beberapa evaluasi sebagai berikut:
 
 - MSE
 
-<img width="245" alt="mse" src="https://user-images.githubusercontent.com/109395960/204513100-d4e620e1-c391-4124-8d49-b1052dc276ec.PNG">
+| 	       |           train|            test|
+|----------|----------------|----------------|
+| KNN		   |90571408.006381 |249200473.92627 |		 
+| RF	     |25508089.709651 |238771672.382782| 
+| Boosting |129113213.176645|270278743.29991 |
 
 - Nilai Akurasi
 
@@ -137,6 +170,10 @@ Maka, dari perhitungan tersebut, dihasilkan beberapa evaluasi sebagai berikut:
 
 - Nilai Perbandingan
 
-<img width="294" alt="comparison" src="https://user-images.githubusercontent.com/109395960/204513105-34f2b309-ed8c-4339-973b-db8260960502.PNG">
+| 	  |  	y_true| prediksi_KNN| prediksi_RF| prediksi_Boosting|	
+|-----|---------|-------------|------------|------------------|
+| 527 |2750000	|2154166.7	  |2307842.9   | 1914371.6	      |
 
 Dari beberapa hasil model, dapat diketahui bahwa algoritma Random Forest memiliki nilai akurasi yang lebih baik dengan tingkatan error terkecil. Nilai perbandingan juga menunjukkan bahwa Random Forest Algorithm memiliki nilai yang paling mendekati y_true (nilai aktual) dibanding model algoritma lainnya.
+
+MSE = $$ 1/n \sum_{i=1}^{n} \(Y_{i} - \hat{Y}_i)^2 $$

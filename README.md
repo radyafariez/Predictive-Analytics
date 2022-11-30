@@ -47,8 +47,10 @@ Dataset yang digunakan pada proyek ini bersumber dari Kaggle yang dapat diunduh 
 
 Dari dataset terkait, didapatkan informasi sebagai berikut:
 - Dataset merupakan data yang memiliki format CSV (Comma-Separated-Values)
+- Tidak terdapat _missing value_ di dalam dataset
 - Dataset memiliki 4339 sampel data
 - Dataset memiliki 7 fitur
+- Dari 7 fitur yang tersedia, terdapat 4 fitur dengan tipe int64, 3 tipe lainnya bertipe object
 
 Beberapa variable pada dataset, yaitu:
 - **name**: Nama merk mobil
@@ -154,6 +156,18 @@ Pada proyek ini dilakukan deploy pada 3 algoritma, yaitu KNN, Random Forest dan 
 --------------------------------------------------
 Dalam step ini, evaluasi dilakukan dengan memperhitungkan Mean Squared Error yang dapat menentukan ttingkat kemiripan antara hasil prediksi dengan nilai y_test (hasil nyata). dalam MSE ini, tingkatan error dihitung berdasarkan rata - rata error dari kuadrat hasil aktual yang diselisihkan hasil prediksi.
 
+$$
+\frac{1}{n} \sum_{i = 1}^{n} (Y_{i} - \hat{Y}_i)^2
+$$
+
+$MSE$ = Mean Squared Error
+
+$n$		 = Number of data
+
+$Y_{i}$ = Observed Values
+
+$\hat{Y}_i$= Predicted Values
+
 Maka, dari perhitungan tersebut, dihasilkan beberapa evaluasi sebagai berikut:
 
 - MSE
@@ -175,7 +189,3 @@ Maka, dari perhitungan tersebut, dihasilkan beberapa evaluasi sebagai berikut:
 | 527 |2750000	|2154166.7	  |2307842.9   | 1914371.6	      |
 
 Dari beberapa hasil model, dapat diketahui bahwa algoritma Random Forest memiliki nilai akurasi yang lebih baik dengan tingkatan error terkecil. Nilai perbandingan juga menunjukkan bahwa Random Forest Algorithm memiliki nilai yang paling mendekati y_true (nilai aktual) dibanding model algoritma lainnya.
-
-MSE = $ frac{1}{n} \sum_{i=1}^{n} \(Y_{i} - \hat{Y}_i)^2
-
-$\frac{1}{n} \sum_{i = 1}^{n}$

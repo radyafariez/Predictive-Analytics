@@ -176,4 +176,6 @@ Maka, dari perhitungan tersebut, dihasilkan beberapa evaluasi sebagai berikut:
 
 Dari beberapa hasil model, dapat diketahui bahwa algoritma Random Forest memiliki nilai akurasi yang lebih baik dengan tingkatan error terkecil. Nilai perbandingan juga menunjukkan bahwa Random Forest Algorithm memiliki nilai yang paling mendekati y_true (nilai aktual) dibanding model algoritma lainnya.
 
-MSE = $$ 1/n \sum_{i=1}^{n} \(Y_{i} - \hat{Y}_i)^2 $$
+MSE = $ frac{1}{n} \sum_{i=1}^{n} \(Y_{i} - \hat{Y}_i)^2
+
+$\frac{1}{n} \sum_{i = 1}^{n}$

@@ -118,15 +118,56 @@ Pada sebaran data yang ditunjukkan, dapat diketahui bahwa:
 
 **Multivariate Analysis**
 --------------------------------------------------
-**Analisa Fitur**
+**Analisa Fitur Numerik**
 
 Pada bagian ini dibuat Multivariate Analysis, yaitu korelasi antara 2 atau lebih fitur dalam data.
+
+|      | year 	      | selling_price  | km_driven     |
+|------|--------------|----------------|---------------|
+| count| 4340.000000  |	 4.340000e+03  | 4340.000000   |
+| mean | 2013.090783  |	 5.041273e+05  | 66215.777419  |
+| std  | 4.215344     |	 5.785487e+05  | 46644.102194  |
+| min  | 1992.000000  |	 2.000000e+04  | 1.000000      |
+| 25%  | 2011.000000  |	 2.087498e+05  | 35000.000000  |
+| 50%  | 2014.000000  |	 3.500000e+05  | 60000.000000  |
+| 75%  | 2016.000000  |	 6.000000e+05  | 90000.000000  |
+| max  | 2020.000000  |	 8.900000e+06  | 806599.000000 |
+
+Pada tabel diatas, terdapat data statistik pada fitur numerik. Dari tabel tersebut diketahui nilai _mean_, nilai minimum, tengah dan maksimum tiap masing - masing fitur untuk lebih memahami karakteristik data.
 
 Dibawah ini didapatkan Correlation Matrix
 
 <img width="289" alt="correlation matrix" src="https://user-images.githubusercontent.com/109395960/204488914-250c6ce9-86a5-43ac-8020-f21806992a31.PNG">
 
 Pada Correlation Matrix ditunjukkan bahwa ketiga fitur memiliki korelasi yang merata secara signifikan.
+
+**Analisa Fitur Kategorik**
+
+Fitur kategorik pada proyek ini diantaranya fitur **transmission**, **owner**, **seller_type**, dan **fuel**. Pada grafik dibawah ini ditunjukkan grafik _bar_ representasi korelasi antara taget (selling_price) dengan fitur kategorik sebagai berikut:
+
+- Fitur Fuel
+
+<img width="580" alt="selling price x fuel" src="https://user-images.githubusercontent.com/109395960/204957136-13d37588-d9be-48fb-834a-e400a80c5a8b.PNG">
+
+Dari grafik pada gambar atas dapat diketahui mobil berjenis bahan bakar Diesel cenderung mempengaruhi tingginya harga mobil, sedangkan jenis bahan bakar LPG cenderung memiliki harga mobil yang paling rendah. Pada fitur ini, cukup memberi pengaruh yang besar terhadap tinggi rendahnya harga.
+
+- Fitur Seller Type
+
+<img width="592" alt="seller type x selling price" src="https://user-images.githubusercontent.com/109395960/204957904-ecc9839d-617f-4093-840a-4c726b1ae0b5.PNG">
+
+Pada fitur Seller Type, dapat diketahui bahwa Trustmark Dealer memiliki harga yang lebih tinggi pada mobil dibanding jenis tempat penjualan mobil lainnya pada fitur ini.
+
+- Fitur Transmission
+
+<img width="579" alt="transmission x selling price" src="https://user-images.githubusercontent.com/109395960/204958147-2815a20c-94f6-4e26-bf49-855762225ce6.PNG">
+
+Pada fitur ini, hanya ada 2 jenis transmisi mobil, akan tetapi harga mobil dengan jenis transmisi otomatis (Automatic) akan cenderung lebih mahal dibandingkan mobil transmisi manual.
+
+- Fitur Owner
+
+<img width="582" alt="owner x selling price" src="https://user-images.githubusercontent.com/109395960/204958339-395d3b49-24ad-4018-835a-f4bb9d450095.PNG">
+
+Rata-rata harga jual relatif terhadap fitur 'owner' cukup beragam jenisnya. Dalam hal ini, mobil yang dijual dalam kondisi sebagai mobil _test drive_ atau uji coba cenderung lebih tinggi harganya, disusul jenis _First Owner_ atau pemilik pertama. Jenis tersebut lebih tinggi harganya jika dibandingkan jenis mobil yang kondisinya sebagai pemilik kedua, ketiga, dan seterusnya.
 
 **Data Preparation**
 --------------------------------------------------
@@ -148,10 +189,22 @@ Merupakan proses atau step pembagian dataset menjadi data latih dan data test. D
 --------------------------------------------------
 Pada proyek ini dilakukan deploy pada 3 algoritma, yaitu KNN, Random Forest dan Boost Algorithm.
 
-- **KNN** atau K-Nearest Neighbor merupakan algortima dengan membandingkan jarak sampel dengan sampel lain dengan melihat jumlah n data terdekat. Dalam proyek ini, digunakan KNeighborsRegressor dengan memberikan input X_train dan y_train.
-- **Random Forest** merupakan teknik yang  dilakukan dengan metode Ensemble. Dilakukan pengoperasian dengan membangun decision tree (pohon keputusan). Pada proyek ini digunakan RandomForestRegressor.
-- **Adaptive Boosting** Merupakan algoritma yang dijalankan untuk meningkatkan performa dengan cara melakukan merging atau penggabungan model yang dianggap lemah dan digantikannya dengan model yang kuat. Dalam proyek ini, digunakan AdaBoostRegressor.
+- **KNN** atau K-Nearest Neighbor merupakan algortima dengan membandingkan jarak sampel dengan sampel lain dengan melihat jumlah n data terdekat. Dalam proyek ini, digunakan KNeighborsRegressor dengan memberikan input X_train dan y_train. Pada algoritma ini, parameter yang digunakan, yaitu:
 
+        n_neighbors = Jumlah K tetangga dengan jarak terdekat
+
+- **Random Forest** merupakan teknik yang  dilakukan dengan metode Ensemble. Dilakukan pengoperasian dengan membangun decision tree (pohon keputusan). Pada proyek ini digunakan RandomForestRegressor. Adapun parameter yang digunakan pada model ini, diantaranya:
+
+        random_state = Berperan untuk mengontrol _seed_ acak pada tiap iterasi boosting
+        n_estimators = Jumlah maksimal estimator saat boosting dihentikan
+        max_depth = Kedalaman maksimal pada pohon (tree).
+
+- **Adaptive Boosting** Merupakan algoritma yang dijalankan untuk meningkatkan performa dengan cara melakukan merging atau penggabungan model yang dianggap lemah dan digantikannya dengan model yang kuat. Dalam proyek ini, digunakan AdaBoostRegressor. Berikut parameter yang digunakan pada algoritma ini:
+        
+        random_state = Berperan untuk mengontrol _seed_ acak pada tiap iterasi boosting
+        n_estimators = Jumlah maksimal estimator saat boosting dihentikan
+        learning_rate = Parameter yang digunakan untuk memperkuat kontribusi pada tiap regresor.
+        
 **Evaluation**
 --------------------------------------------------
 Dalam step ini, evaluasi dilakukan dengan memperhitungkan Mean Squared Error yang dapat menentukan ttingkat kemiripan antara hasil prediksi dengan nilai y_test (hasil nyata). dalam MSE ini, tingkatan error dihitung berdasarkan rata - rata error dari kuadrat hasil aktual yang diselisihkan hasil prediksi.
